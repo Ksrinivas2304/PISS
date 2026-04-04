@@ -1,0 +1,17 @@
+{
+  "name": "instagram-story-saver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-only selective Instagram story saver powered by Playwright.",
+  "scripts": {
+    "start": "node app/server.mjs",
+    "check": "node --check app/server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}

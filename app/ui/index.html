@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Instagram Story Saver</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">Local-only tool</p>
+        <h1>Selective Instagram Story Saver</h1>
+        <p class="intro">
+          Uses your own browser session, keeps session state on this machine only, and lets you pick the exact story items to save.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Session</h2>
+            <p>Log in manually once, then save the local session without storing your password.</p>
+          </div>
+          <span id="sessionBadge" class="status-badge">Checking...</span>
+        </div>
+
+        <div class="button-row">
+          <button id="startLoginButton">Login to Instagram</button>
+          <button id="saveSessionButton" class="secondary">Save Session</button>
+          <button id="clearSessionButton" class="ghost">Clear Session</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Fetch Stories</h2>
+            <p>Enter one username, inspect the currently active story items, and choose only what you want.</p>
+          </div>
+        </div>
+
+        <form id="fetchForm" class="fetch-form">
+          <label>
+            Instagram username
+            <input id="usernameInput" name="username" type="text" placeholder="natgeo" autocomplete="off" required />
+          </label>
+          <button type="submit">Fetch Stories</button>
+        </form>
+
+        <div class="filter-row">
+          <button id="selectLatestButton" type="button" class="secondary">Latest Only</button>
+          <button id="selectVideosButton" type="button" class="secondary">Videos Only</button>
+          <button id="selectImagesButton" type="button" class="secondary">Images Only</button>
+          <button id="clearSelectionButton" type="button" class="ghost">Clear Selection</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Story Items</h2>
+            <p>Preview the fetched items, keep the ones you want, and download them into a local folder.</p>
+          </div>
+          <button id="downloadButton" class="accent" disabled>Download Selected</button>
+        </div>
+
+        <div id="storyGrid" class="story-grid empty-state">
+          No stories fetched yet.
+        </div>
+      </section>
+
+      <section class="panel log-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Status</h2>
+            <p>Minimal local messages only. No cookies or session data are shown here.</p>
+          </div>
+        </div>
+
+        <pre id="statusLog" class="status-log">Ready.</pre>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
